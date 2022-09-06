@@ -14,8 +14,7 @@ data(iris)
 petal_length_mean <- mean(iris[['Petal.Length']])
 
 # Plot the distribution of the Petal.Length column as a histogram (?hist)
-?hist
-hist(iris[['Petal.Length']],  main = paste("Histogram of Patal length"), xlab = "Patal length",  ylim = range(0, 50), labels = TRUE)
+hist(iris[['Petal.Length']],  main = paste("Histogram of Patal length"), xlab = "Patal length", ylim = c(0, 50), labels = TRUE, col = "darkmagenta")
 
 # Save the script
 # Click ‘Source’ in RStudio to run your script from beginning to end
