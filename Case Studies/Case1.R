@@ -18,3 +18,6 @@ hist(iris[['Petal.Length']],  main = paste("Histogram of Patal length"), xlab = 
 
 # Save the script
 # Click ‘Source’ in RStudio to run your script from beginning to end
+library(ggplot2)
+ggplot(iris, aes(x = Petal.Length, fill = Species)) +
+  geom_histogram()
