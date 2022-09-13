@@ -61,7 +61,7 @@ ggsave("Case2_Buffalo_Florida_Summer_Compare.png")
 
   
 # Graph the annual mean temperature in June, July and August (JJA) using ggplot
-summer <- ggplot(temp, aes(x = YEAR , y = JJA)) +
+ggplot(temp, aes(x = YEAR , y = JJA)) +
   geom_line() +
   geom_smooth(colour = "red") + #Add a smooth line with geom_smooth()
   xlab("Year") +
@@ -73,8 +73,8 @@ summer <- ggplot(temp, aes(x = YEAR , y = JJA)) +
   theme(plot.title = element_text(hjust = 0.5),
         plot.subtitle = element_text(hjust = 0.5),
         plot.caption = element_text(hjust = 0),
-        plot.caption.position = "panel") + # Left align the caption
-  ggsave("Case2_Buffalo_Summer_tem.png")
+        plot.caption.position = "panel") # Left align the caption
+ggsave("Case2_Buffalo_Summer_tem.png")
 
 
 # Save a graphic to a png file using png() and dev.off() OR ggsave
@@ -82,7 +82,7 @@ summer <- ggplot(temp, aes(x = YEAR , y = JJA)) +
 # Click ‘Source’ in RStudio to run the script from beginning to end to re-run the entire process
 # What do you tell your grandfather and his brother? What additional tests / visualizations could you do?
 # The summers are getting hotter!
-winter <- ggplot(temp, aes(x = YEAR , y = DJF)) +
+ggplot(temp, aes(x = YEAR , y = DJF)) +
   geom_line() +
   geom_smooth() + #Add a smooth line with geom_smooth()
   xlab("Year") +
@@ -94,5 +94,5 @@ winter <- ggplot(temp, aes(x = YEAR , y = DJF)) +
   theme(plot.title = element_text(hjust = 0.5),
         plot.subtitle = element_text(hjust = 0.5),
         plot.caption = element_text(hjust = 0),
-        plot.caption.position = "panel") +# Left align the caption
-  ggsave("Case2_Buffalo_Winter_tem.png")
+        plot.caption.position = "panel") # Left align the caption
+ggsave("Case2_Buffalo_Winter_tem.png")
