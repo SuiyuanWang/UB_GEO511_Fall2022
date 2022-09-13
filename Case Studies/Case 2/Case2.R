@@ -16,21 +16,36 @@ summary(temp)
 # Graph the annual mean temperature in June, July and August (JJA) using ggplot
 ggplot(temp, aes(x = YEAR , y = JJA)) +
   geom_line() +
-  geom_smooth() + #Add a smooth line with geom_smooth()
+  geom_smooth(colour = "red") + #Add a smooth line with geom_smooth()
   xlab("Year") +
   ylab("Mean Summer Temperatures (°C)") + # Add informative axis labels using xlab() and ylab() including units
   labs(title = "Mean Summer Temperatures in Buffalo, NY",
        subtitle = "Summer includes June, July, and August",
-       caption = "Figure.1. Data from the global Historical Climate Network. Blue line is a LOESS smooth."
+       caption = "Figure.1. Data from the global Historical Climate Network. Red line is a LOESS smooth."
        ) + # Add a graph title with ggtitle()
   theme(plot.title = element_text(hjust = 0.5),
         plot.subtitle = element_text(hjust = 0.5),
         plot.caption = element_text(hjust = 0),
         plot.caption.position = "panel") + # Left align the caption
-ggsave("Case2.png")
+ggsave("Case2_Summer.png")
 # Save a graphic to a png file using png() and dev.off() OR ggsave
 # Save the script
 # Click ‘Source’ in RStudio to run the script from beginning to end to re-run the entire process
 # What do you tell your grandfather and his brother? What additional tests / visualizations could you do?
 # The summers are getting hotter!
-  
+
+ggplot(temp, aes(x = YEAR , y = DJF)) +
+  geom_line() +
+  geom_smooth() + #Add a smooth line with geom_smooth()
+  xlab("Year") +
+  ylab("Mean Winter Temperatures (°C)") + # Add informative axis labels using xlab() and ylab() including units
+  labs(title = "Mean Winter Temperatures in Buffalo, NY",
+       subtitle = "Winter includes December, January, and February",
+       caption = "Figure.1. Data from the global Historical Climate Network. Blue line is a LOESS smooth."
+  ) + # Add a graph title with ggtitle()
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5),
+        plot.caption = element_text(hjust = 0),
+        plot.caption.position = "panel") + # Left align the caption
+  ggsave("Case2_Winter.png")
+# The winters are getting warmer! 
