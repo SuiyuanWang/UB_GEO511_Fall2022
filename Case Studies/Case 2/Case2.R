@@ -58,9 +58,7 @@ ggplot(Allstation_temp, aes(x = YEAR , y = JJA, group = Station, color = Station
         plot.caption = element_text(hjust = 0),
         plot.caption.position = "panel")
 ggsave("Case2_Buffalo_Florida_Summer_Compare.png")
-
   
-# Graph the annual mean temperature in June, July and August (JJA) using ggplot
 ggplot(temp, aes(x = YEAR , y = JJA)) +
   geom_line() +
   geom_smooth(colour = "red") + #Add a smooth line with geom_smooth()
@@ -68,14 +66,13 @@ ggplot(temp, aes(x = YEAR , y = JJA)) +
   ylab("Mean Summer Tem (°C)") + # Add informative axis labels using xlab() and ylab() including units
   labs(title = "Mean Summer Temperatures in Buffalo, NY",
        subtitle = "Summer includes June, July, and August",
-       caption = "Data from the global Historical Climate Network. Red line is a LOESS smooth."
+       caption = "Figure.2. Data from the global Historical Climate Network. Red line is a LOESS smooth."
   ) + # Add a graph title with ggtitle()
   theme(plot.title = element_text(hjust = 0.5),
         plot.subtitle = element_text(hjust = 0.5),
         plot.caption = element_text(hjust = 0),
         plot.caption.position = "panel") # Left align the caption
 ggsave("Case2_Buffalo_Summer_tem.png")
-
 
 # Save a graphic to a png file using png() and dev.off() OR ggsave
 # Save the script
@@ -89,7 +86,7 @@ ggplot(temp, aes(x = YEAR , y = DJF)) +
   ylab("Mean Winter Tem (°C)") + # Add informative axis labels using xlab() and ylab() including units
   labs(title = "Mean Winter Temperatures in Buffalo, NY",
        subtitle = "Winter includes December, January, and February",
-       caption = "Data from the global Historical Climate Network. Blue line is a LOESS smooth."
+       caption = "Figure.3. Data from the global Historical Climate Network. Blue line is a LOESS smooth."
   ) + # Add a graph title with ggtitle()
   theme(plot.title = element_text(hjust = 0.5),
         plot.subtitle = element_text(hjust = 0.5),
