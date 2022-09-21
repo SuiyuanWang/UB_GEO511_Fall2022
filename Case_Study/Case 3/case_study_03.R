@@ -19,6 +19,7 @@ p1 <- ggplot(gapminder_without_Kuwait, aes(x = lifeExp, y = gdpPercap)) +
   theme_bw() +
   labs(title = "Wealth and life expectancy through time",
        tag = "Figure 1",
+       caption = "Source: Data from specific spreadsheets on Gapminder.org circa 2010.",
        x = "Life Expectancy",
        y = "GDP per capita",
        size = "Population (100k)",
@@ -39,7 +40,9 @@ p2 <- ggplot(gapminder_without_Kuwait, aes(x = year, y = gdpPercap)) +
   geom_point(data = gapminder_continent, aes(x = year, y = gdpPercapweighted, size = pop/100000)) +
   facet_wrap(~continent, nrow=1) + 
   theme_bw() + 
-  labs(caption = "Source: Data from specific spreadsheets on Gapminder.org circa 2010.",
+  labs(title = "Wealth and life expectancy through time",
+       tag = "Figure 2",
+       caption = "Source: Data from specific spreadsheets on Gapminder.org circa 2010.",
        x = "Year",
        y = "GDP per capita",
        size = "Population (100k)",
