@@ -64,15 +64,6 @@ plot(tmean)
 
 ![](case_study_06_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
-### 3) The WorldClim data are stored as hundreths of degrees C. So a real value of 15.5 C would be stored as 155. This saves disk space because they can be stored as `integers` instead of `floating point` numbers. This means each value needs to be multiplied by `0.1` to convert back to degrees C. You can do this with `gain()`.
-
-``` r
-gain(tmean) <- gain(tmean)
-plot(tmean)
-```
-
-![](case_study_06_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
-
 ### 4) Create a new object called `tmax_annual` that is the annual maximum temperature in each pixel of the raster stack using `max()`. This will find the maximum temperature in each location across all months.
 
 ``` r
@@ -87,7 +78,7 @@ tmax_annual <- max(tmean)
 plot(tmax_annual)
 ```
 
-![](case_study_06_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](case_study_06_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ``` r
 tmax_annual
@@ -138,7 +129,7 @@ ggplot(tmax_country) +
   theme(legend.position = 'bottom')
 ```
 
-![](case_study_06_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](case_study_06_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
 ### 2) use dplyr tools to find the hottest country in each continent. You may need group_by() and top_n. To create a nice looking table, you may also want to use select() to keep only the desired columns, arrange() to sort them, st_set_geometry(NULL) to drop the geometry column (if desired). Save this table as hottest_continents.
 
