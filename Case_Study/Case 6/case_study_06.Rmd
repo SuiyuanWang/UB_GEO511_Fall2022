@@ -53,7 +53,7 @@ plot(tmean)
 
 ### 3) The WorldClim data are stored as hundreths of degrees C. So a real value of 15.5 C would be stored as 155. This saves disk space because they can be stored as `integers` instead of `floating point` numbers. This means each value needs to be multiplied by `0.1` to convert back to degrees C. You can do this with `gain()`.
 ```{r}
-gain(tmean) <- gain(tmean) * 0.1
+gain(tmean) <- gain(tmean)
 plot(tmean)
 ```
 

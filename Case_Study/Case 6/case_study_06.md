@@ -67,7 +67,7 @@ plot(tmean)
 ### 3) The WorldClim data are stored as hundreths of degrees C. So a real value of 15.5 C would be stored as 155. This saves disk space because they can be stored as `integers` instead of `floating point` numbers. This means each value needs to be multiplied by `0.1` to convert back to degrees C. You can do this with `gain()`.
 
 ``` r
-gain(tmean) <- gain(tmean) * 0.1
+gain(tmean) <- gain(tmean)
 plot(tmean)
 ```
 
@@ -153,12 +153,12 @@ hottest_countries <- tmax_country %>%
 kable(hottest_countries)
 ```
 
-| name_long                           | continent               |  tmax |
-|:------------------------------------|:------------------------|------:|
-| Australia                           | Oceania                 | 0.320 |
-| Somalia                             | Africa                  | 0.277 |
-| Paraguay                            | South America           | 0.277 |
-| Timor-Leste                         | Asia                    | 0.276 |
-| Costa Rica                          | North America           | 0.261 |
-| Albania                             | Europe                  | 0.125 |
-| French Southern and Antarctic Lands | Seven seas (open ocean) | 0.071 |
+| name_long                           | continent               | tmax |
+|:------------------------------------|:------------------------|-----:|
+| Australia                           | Oceania                 | 32.0 |
+| Somalia                             | Africa                  | 27.7 |
+| Paraguay                            | South America           | 27.7 |
+| Timor-Leste                         | Asia                    | 27.6 |
+| Costa Rica                          | North America           | 26.1 |
+| Albania                             | Europe                  | 12.5 |
+| French Southern and Antarctic Lands | Seven seas (open ocean) |  7.1 |
