@@ -149,17 +149,16 @@ hottest_countries <- tmax_country %>%
   arrange(desc(tmax)) %>%
   st_set_geometry(NULL) %>%
   top_n(1,tmax)
-hottest_countries
+
+kable(hottest_countries)
 ```
 
-    ## # A tibble: 7 × 3
-    ## # Groups:   continent [7]
-    ##   name_long                           continent                tmax
-    ##   <chr>                               <chr>                   <dbl>
-    ## 1 Australia                           Oceania                 0.32 
-    ## 2 Somalia                             Africa                  0.277
-    ## 3 Paraguay                            South America           0.277
-    ## 4 Timor-Leste                         Asia                    0.276
-    ## 5 Costa Rica                          North America           0.261
-    ## 6 Albania                             Europe                  0.125
-    ## 7 French Southern and Antarctic Lands Seven seas (open ocean) 0.071
+| name_long                           | continent               |  tmax |
+|:------------------------------------|:------------------------|------:|
+| Australia                           | Oceania                 | 0.320 |
+| Somalia                             | Africa                  | 0.277 |
+| Paraguay                            | South America           | 0.277 |
+| Timor-Leste                         | Asia                    | 0.276 |
+| Costa Rica                          | North America           | 0.261 |
+| Albania                             | Europe                  | 0.125 |
+| French Southern and Antarctic Lands | Seven seas (open ocean) | 0.071 |

@@ -16,6 +16,7 @@ library(sp)
 library(spData)
 library(tidyverse)
 library(sf)
+library(knitr)
 ```
 
 ```{r setup, include=FALSE}
@@ -96,5 +97,6 @@ hottest_countries <- tmax_country %>%
   arrange(desc(tmax)) %>%
   st_set_geometry(NULL) %>%
   top_n(1,tmax)
-hottest_countries
+
+kable(hottest_countries)
 ```
