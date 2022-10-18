@@ -1,0 +1,29 @@
+---
+title: "Case_07"
+author: "Suiyuan Wang"
+date: "10/18/2022"
+output: 
+    github_document: default
+    theme: blank
+    highlight: blank
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+Example codes.
+```{r}
+library(tidyverse)
+library(reprex)
+library(sf)
+
+library(spData)
+data(world)
+ggplot(world,aes(x=gdpPercap, y=continent, color=continent))+
+   geom_density(alpha=0.5,color=F)
+```
+Copy the codes before, and run the following codes.
+```{r}
+#reprex(venue="gh")
+```
+Go to GitHub and report a new issue, paste the Reprex output and Submit it.
