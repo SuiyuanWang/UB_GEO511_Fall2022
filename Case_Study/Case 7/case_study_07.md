@@ -34,8 +34,9 @@ ggplot(world,aes(x=gdpPercap, y=continent, color=continent))+
 
     ## Warning: Removed 17 rows containing non-finite values (stat_density).
 
-![](case_study_07_files/figure-gfm/unnamed-chunk-1-1.png)<!-- --> Copy
-the codes before, and run the following codes.
+![](case_study_07_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
+
+Copy the codes before, and run the following codes.
 
 ``` r
 #reprex(venue="gh")
