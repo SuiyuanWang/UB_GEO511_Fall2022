@@ -1,0 +1,39 @@
+---
+title: "Case 8"
+author: "Suiyuan Wang"
+date: "10/25/2022"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+  github_document: default
+  powerpoint_presentation: default
+  word_document: default
+knit: {rmarkdown::render("case_study_08.Rmd",output_format = "all")}
+---
+![](https://gml.noaa.gov/webdata/logos/noaa_small.png)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=T)
+library(tidyverse)
+library(ggplot2)
+library(kableExtra)
+```
+
+### Read the “Mauna Loa CO2 annual mean data” from this [website](https://gml.noaa.gov/ccgg/trends/data.html).
+```{r}
+CO2_mean = read_table('ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_annmean_mlo.txt',col_names = c('year', 'mean', 'unc'), skip = 57)
+CO2_mean
+```
+
+### Make one timeseries plot (ggplot of CO2~time)
+```{r}
+ggplot(data = CO2_mean, mapping = aes(x = year, y = mean)) + geom_line()
+```
+
+### Make one table. This table can summarize anything you want (top 5 years?)
+```{r}
+top_years <- CO2_mean %>% arrange(desc(mean))
+knitr::kable(top_years[1:5,1:3], col.names = c('year', 'mean', 'unc'), caption = "Mauna Loa Top 5 years CO2 annual mean data.", "simple")
+```
+
+
