@@ -3,10 +3,10 @@ title: "Case 8"
 author: "Suiyuan Wang"
 date: "10/25/2022"
 output:
+  github_document: default
   html_document:
     toc: true
     toc_depth: 2
-  github_document: default
   powerpoint_presentation: default
   word_document: default
 knit: {rmarkdown::render("case_study_08.Rmd",output_format = "all")}
