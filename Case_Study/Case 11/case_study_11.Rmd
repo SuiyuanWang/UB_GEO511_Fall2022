@@ -2,8 +2,10 @@
 title: "Case 11"
 author: "Suiyuan Wang"
 date: "11/15/2022"
-output:
-  github_document: default
+output: 
+    html_document:
+    toc: true
+    toc_depth: 2
 always_allow_html: true
 knit: {rmarkdown::render("case_study_11.Rmd",output_format = "all")}
 ---
