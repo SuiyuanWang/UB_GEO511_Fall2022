@@ -27,7 +27,7 @@ getDoParWorkers() # check registered cores
 ```{r}
 # go to  http://api.census.gov/data/key_signup.html and get a key, then run the line below with your key.  Don't push your key to github!
 library(tidycensus)
-#census_api_key("83e6682de7bfa24b9c6133fc65a0aea557d1f7b4")
+census_api_key("83e6682de7bfa24b9c6133fc65a0aea557d1f7b4")
 ```
 
 ```{r}
