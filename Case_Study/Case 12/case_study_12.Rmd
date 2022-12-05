@@ -1,0 +1,45 @@
+---
+title: "case_study_12"
+author: "Suiyuan Wang"
+date: "12/5/2022"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(ggmap)
+library(htmlwidgets)
+library(widgetframe)
+library(tidyverse)
+library(rnoaa)
+library(xts)
+library(doParallel)
+library(dygraphs)
+```
+
+
+```{r}
+d=meteo_tidy_ghcnd("USW00014733",
+                   date_min = "2016-01-01", 
+                   var = c("TMAX"),
+                   keep_flags=T) %>% 
+   mutate(date=as.Date(date),
+          tmax=as.numeric(tmax)/10) 
+d_xts=xts(d$tmax,order.by=d$date)
+```
+
+Remaining steps:
+
+Convert d into an xts time series object using xts(). You will need to specifify which column has the data (d$tmax) and order.by=d$date. See ?xts for help.
+1. Use dygraph() to draw the plot
+2. Set the title of the dygraph to be main="Daily Maximum Temperature in Buffalo, NY"
+3. Add a dyRangeSelector() with a dateWindow of c("2020-01-01", "2020-10-31")
+4. Explore other options. You could download another variable (precipitation?) and add it to the plot. Or imagine another way to visualize the data using one of the other interactive libraries.
+
+```{r}
+plot = dygraph(d_xts, main = 'Daily Maximum Temperature in Buffalo, NY')
+
+dyRangeSelector(plot, dateWindow = c("2020-01-01", "2020-10-31"))
+```
